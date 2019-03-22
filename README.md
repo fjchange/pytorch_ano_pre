@@ -27,34 +27,63 @@ replace the model_path and evaluate_name as you want
 > python evaluate.py
 
 ## 5. reference
-[1]  @inproceedings{Hui_CVPR_2018,
+
+[1]  @INPROCEEDINGS{liu2018ano_pred, 
+
+        author={W. Liu and W. Luo, D. Lian and S. Gao}, 
+        
+        booktitle={2018 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}, 
+        
+        title={Future Frame Prediction for Anomaly Detection -- A New Baseline}, 
+        
+        year={2018}
+        
+     }
+     
+[2]  misc{pytorch_ano_pred,
+
+          author = {Jiachang Feng},
+          
+          title = { A Primplementation of {Ano_pred} Using {Pytorch}},
+          
+          year = {2019},
+          
+          howpublished = {\url{https://github.com/fjchange/pytorch_ano_pre}}
+          
+    }
+
+[3]  @inproceedings{Hui_CVPR_2018,
+
          author = {Tak-Wai Hui and Xiaoou Tang and Chen Change Loy},
+         
          title = {{LiteFlowNet}: A Lightweight Convolutional Neural Network for Optical Flow Estimation},
+         
          booktitle = {IEEE Conference on Computer Vision and Pattern Recognition},
+         
          year = {2018}
+         
      }
 
-[2]  @misc{pytorch-liteflownet,
+[4]  @misc{pytorch-liteflownet,
+
          author = {Simon Niklaus},
+         
          title = {A Reimplementation of {LiteFlowNet} Using {PyTorch}},
+         
          year = {2019},
+         
          howpublished = {\url{https://github.com/sniklaus/pytorch-liteflownet}}
+         
     }
-[3]  @INPROCEEDINGS{liu2018ano_pred, 
-        author={W. Liu and W. Luo, D. Lian and S. Gao}, 
-        booktitle={2018 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}, 
-        title={Future Frame Prediction for Anomaly Detection -- A New Baseline}, 
-        year={2018}
-     }
-[4]  misc{pytorch-unet,
+   
+[5]  misc{pytorch-unet,
+
          author = {milesial},
+         
          title = {A Reimplementation of {UNet} Using {PyTorch}},
+         
          year = {2019},
+         
          howpublished = {\url{https://github.com/milesial/Pytorch-UNet}}
-    }
-[5]  misc{pytorch_ano_pred,
-          author = {Jiachang Feng},
-          title = { A Primplementation of {Ano_pred} Using {Pytorch}},
-          year = {2019},
-          howpublished = {\url{https://github.com/fjchange/pytorch_ano_pre}}
+         
     }
