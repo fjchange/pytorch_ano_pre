@@ -21,10 +21,15 @@ Pytorch Re-implement of ano_pre_cvpr2018, replace flownet2 with lite-flownet
 3. replace all the modle_output_path and log_output_path to where you want in **train.py**
 
 ## 3. training
+
+> cd ano_pre
+
 > python train.py
 
 ## 4. evalute
 replace the model_path and evaluate_name as you want
+
+> cd ano_pre
 
 > python evaluate.py
 
