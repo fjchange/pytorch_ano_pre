@@ -28,7 +28,7 @@ replace the model_path and evaluate_name as you want
 
 ## 5. reference
 
-[1]  @INPROCEEDINGS{liu2018ano_pred, 
+> [1]  @INPROCEEDINGS{liu2018ano_pred, 
 
         author={W. Liu and W. Luo, D. Lian and S. Gao}, 
         
@@ -40,7 +40,7 @@ replace the model_path and evaluate_name as you want
         
      }
      
-[2]  misc{pytorch_ano_pred,
+> [2]  misc{pytorch_ano_pred,
 
           author = {Jiachang Feng},
           
@@ -52,7 +52,7 @@ replace the model_path and evaluate_name as you want
           
     }
 
-[3]  @inproceedings{Hui_CVPR_2018,
+> [3]  @inproceedings{Hui_CVPR_2018,
 
          author = {Tak-Wai Hui and Xiaoou Tang and Chen Change Loy},
          
@@ -64,7 +64,7 @@ replace the model_path and evaluate_name as you want
          
      }
 
-[4]  @misc{pytorch-liteflownet,
+> [4]  @misc{pytorch-liteflownet,
 
          author = {Simon Niklaus},
          
@@ -76,7 +76,7 @@ replace the model_path and evaluate_name as you want
          
     }
    
-[5]  misc{pytorch-unet,
+> [5]  misc{pytorch-unet,
 
          author = {milesial},
          
