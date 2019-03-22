@@ -27,6 +27,9 @@ replace the model_path and evaluate_name as you want
 > python evaluate.py
 
 ## 5. reference
+
+If you find this useful, please cite the work as follows:
+
 ```code
 [1]  @INPROCEEDINGS{liu2018ano_pred, 
         author={W. Liu and W. Luo, D. Lian and S. Gao}, 
