@@ -13,8 +13,8 @@ import time
 import pickle
 from . import eval_metric
 
-training_data_folder='/hdd/fjc/VAD/avenue/training/frames/'
-testing_data_folder='/hdd/fjc/VAD/avenue/testing/frames/'
+training_data_folder='your_path'
+testing_data_folder='your_path'
 
 dataset_name='avenue'
 
