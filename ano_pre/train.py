@@ -7,7 +7,7 @@ from losses import *
 
 sys.path.append('..')
 from Dataset import img_dataset
-from models.unet import UNet,_test
+from models.unet import UNet
 from models.pix2pix_networks import PixelDiscriminator
 from liteFlownet.lite_flownet import Network,batch_estimate
 from torch.utils.data import DataLoader
@@ -18,15 +18,14 @@ from tensorboardX import SummaryWriter
 from utils import utils
 import os
 
-training_data_folder='/hdd/fjc/VAD/avenue/training/frames/'
-testing_data_folder='/hdd/fjc/VAD/avenue/testing/frames/'
+training_data_folder='your_path'
+testing_data_folder='your_path'
 
-writer_path='../log/ano_pred_avenue'
+writer_path='your_path'
+model_generator_save_path='your_path'
+model_discriminator_save_path='your_path'
 
-model_generator_save_path='../pth_model/ano_pred_avenue_generator.pth'
-model_discriminator_save_path='../pth_model/ano_pred_avenue_discriminator.pth'
-
-lite_flow_model_path='../liteFlownet/network-default.pytorch'
+lite_flow_model_path='your_path'
 
 os.environ['CUDA_VISIBLE_DEVICES']='0,1'
 
@@ -178,18 +177,6 @@ def train(frame_num,layer_nums,input_channels,output_channels,discriminator_num_
                 utils.saver(discriminator.state_dict(),model_discriminator_save_path,step)
             step+=1
 
-def test(frame_num,layer_nums,input_channels,output_channels,discriminator_num_filters,bn=False):
-    rand=torch.ones([4,12,256,256]).cuda()
-    #generator=UNet(input_channels,0,output_channel=output_channels,bn=bn).cuda()
-    generator=UNet(12,0).cuda()
-    output=generator(rand)
-    print(output.grad_fn)
-    print(output.requires_grad)
-    print(generator.training)
-
 if __name__=='__main__':
     train(num_clips,num_unet_layers,num_channels*(num_clips-num_his),num_channels,discriminator_channels)
-    #test(num_clips,num_unet_layers,num_channels*(num_clips-num_his),num_channels,discriminator_channels)
-    #_test()
-    #test(0,0,0,0,0)
 
