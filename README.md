@@ -12,7 +12,6 @@ This Implementation is much easier to converge than the original repo, which we 
 ## 1. requirement
 - pytorch >=0.4.1
 - tensorboardX (if you want)
-- tensorflow (if you use tensorboardX)
 
 ## 2. preparation
 1. Download Dataset CUHK Avenue [download_link](https://onedrive.live.com/?authkey=%21AMqh2fTSemfrokE&id=3705E349C336415F%215109&cid=3705E349C336415F), unzip in the path you want, and replace the path in **train.py**
