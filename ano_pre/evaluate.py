@@ -4,21 +4,21 @@ from models.unet import UNet
 import sys
 sys.path.append('..')
 from torch.utils.data import DataLoader
-from .losses import *
-
-from .util import psnr_error
+from losses import *
+import numpy as np
+from util import psnr_error
 
 import os
 import time
 import pickle
-from . import eval_metric
+import eval_metric
 
 training_data_folder='your_path'
 testing_data_folder='your_path'
 
 dataset_name='avenue'
 
-psnr_dir='./psnr/'
+psnr_dir='../psnr/'
 
 def evaluate(frame_num, layer_nums, input_channels, output_channels,model_path,evaluate_name,bn=False):
     '''
@@ -45,7 +45,7 @@ def evaluate(frame_num, layer_nums, input_channels, output_channels,model_path,e
 
 
     total = 0
-    torch.load(generator.state_dict(),model_path)
+    generator.load_state_dict(torch.load(model_path))
 
     for dir in video_dirs:
         _temp_test_folder = os.path.join(testing_data_folder, dir)
@@ -54,7 +54,8 @@ def evaluate(frame_num, layer_nums, input_channels, output_channels,model_path,e
         len_dataset = dataset.pics_len
         test_iters = len_dataset - frame_num + 1
         test_counter = 0
-        data_loader = DataLoader(dataset=dataset, batch_size=1, shuffle=False, num_workers=4)
+
+        data_loader = DataLoader(dataset=dataset, batch_size=1, shuffle=False, num_workers=1)
 
         psnrs = np.empty(shape=(len_dataset,),dtype=np.float32)
         for test_input, _ in data_loader:
@@ -64,7 +65,7 @@ def evaluate(frame_num, layer_nums, input_channels, output_channels,model_path,e
 
             g_output = generator(test_input)
             test_psnr = psnr_error(g_output, test_target)
-            test_psnr = test_psnr.tolist()[0]
+            test_psnr = test_psnr.tolist()
             psnrs[test_counter+frame_num-1]=test_psnr
 
             test_counter += 1
@@ -86,3 +87,7 @@ def evaluate(frame_num, layer_nums, input_channels, output_channels,model_path,e
 
     results = eval_metric.evaluate(evaluate_name, pickle_path)
     print(results)
+
+
+if __name__ =='__main__':
+    evaluate(frame_num=5,layer_nums=4,input_channels=12,output_channels=3,model_path='../pth_model/ano_pred_avenue_generator.pth-9000',evaluate_name='compute_auc')
