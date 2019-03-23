@@ -33,7 +33,7 @@ replace the model_path and evaluate_name as you want
 
 > python evaluate.py
 
-![img](https://github.com/fjchange/pytorch_ano_pre/Assests/image.png)
+![img](https://github.com/fjchange/pytorch_ano_pre/blob/master/Assests/image.png)
 
 ## 5. reference
 
