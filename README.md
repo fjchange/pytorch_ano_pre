@@ -49,7 +49,7 @@ If you find this useful, please cite the work as follows:
      }   
 [2]  misc{pytorch_ano_pred,
           author = {Jiachang Feng},
-          title = { A Primplementation of {Ano_pred} Using {Pytorch}},
+          title = { A Reimplementation of {Ano_pred} Using {Pytorch}},
           year = {2019},
           howpublished = {\url{https://github.com/fjchange/pytorch_ano_pre}}    
     }
