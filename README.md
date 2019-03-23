@@ -1,7 +1,7 @@
 # pytorch_ano_pre
 Pytorch Re-implement of ano_pre_cvpr2018, replace flownet2 with lite-flownet
 
-This Implementation is much easier to converge than the original repo, and get a result as good as the paper said with AUC of 84.9%.
+This Implementation is much easier to converge than the original repo, which we take 4100 steps while the tf one take 80000 steps, and get a result as good as the paper said with AUC of 84.9%.
 
 [Future Frame Prediction for Anomaly Detection -- A New Baseline, CVPR 2018](https://arxiv.org/pdf/1712.09867.pdf)
 
