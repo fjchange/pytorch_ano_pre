@@ -46,9 +46,8 @@ d_lr=0.00002
 #different range with the source version, should change
 lam_int=1.0*2
 lam_gd=1.0*2
-# the output of the flow keep same,
-# more precise the flow is, the more small op_rate?
-lam_op=2.0
+# here we use no flow loss
+lam_op=0#2.0
 
 lam_adv=0.05
 
@@ -145,7 +144,6 @@ def train(frame_num,layer_nums,input_channels,output_channels,discriminator_num_
             g_int_loss=int_loss(G_output,target)
             g_gd_loss=gd_loss(G_output,target)
 
-            lam_op=0
             g_loss=lam_adv*g_adv_loss+lam_gd*g_gd_loss+lam_op*g_op_loss+lam_int*g_int_loss
 
             optimizer_G.zero_grad()
