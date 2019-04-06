@@ -401,14 +401,16 @@ def compute_auc(loss_file):
         for i in range(num_videos):
             distance = psnr_records[i]
 
-            if NORMALIZE:
-                distance -= distance.min()  # distances = (distance - min) / (max - min)
-                distance /= distance.max()
+#             if NORMALIZE:
+#                 distance -= distance.min()  # distances = (distance - min) / (max - min)
+#                 distance /= distance.max()
                 # distance = 1 - distance
 
             scores = np.concatenate((scores, distance[DECIDABLE_IDX:]), axis=0)
             labels = np.concatenate((labels, gt[i][DECIDABLE_IDX:]), axis=0)
-
+        if NORMALIZE:
+            scores -= scores.min()  # scores = (scores - min) / (max - min)
+            scores /= scores.max()
         fpr, tpr, thresholds = metrics.roc_curve(labels, scores, pos_label=0)
         auc = metrics.auc(fpr, tpr)
 
