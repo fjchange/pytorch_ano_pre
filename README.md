@@ -9,7 +9,7 @@ Pytorch Re-implemention of ano_pre_cvpr2018, replace flownet2 with lite-flownet
 
 This Implementation is much easier to converge than the original repo, which we take 20000 steps while the tf one take 80000 steps, and get a result as good as the paper said with AUC of 85.5%+-0.75%.
 
-![img](https://github.com/fjchange/pytorch_ano_pre/blob/master/Assests/Screenshot%20from%202019-04-06%2023-01-46.png)
+![img](https://github.com/fjchange/pytorch_ano_pre/blob/master/Assests/Screenshot%20from%202019-04-06%2023-06-49.png)
 ![img](https://github.com/fjchange/pytorch_ano_pre/blob/master/Assests/Screenshot%20from%202019-04-06%2023-02-31.png)
 ![img](https://github.com/fjchange/pytorch_ano_pre/blob/master/Assests/Screenshot%20from%202019-04-06%2023-02-54.png)
 
