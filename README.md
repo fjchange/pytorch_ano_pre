@@ -8,7 +8,7 @@ Pytorch Re-implemention of ano_pre_cvpr2018, replace flownet2 with lite-flownet
 [tensorflow_offical_implement](https://github.com/StevenLiuWen/ano_pred_cvpr2018)
 
 ** This repo modify the normalization of the Regular Score, And replace flownetSD with lite-flownet **
-AUC 86.5%+-0.1% of Avenue dataset
+AUC 85.6%+-0.1% of Avenue dataset
 
 ![img](https://github.com/fjchange/pytorch_ano_pre/blob/master/Assests/1554797352491.png)
 
