@@ -20,7 +20,7 @@ AUC 85.6%+-0.1% of Avenue dataset
 1. Download Dataset CUHK Avenue [download_link](https://onedrive.live.com/?authkey=%21AMqh2fTSemfrokE&id=3705E349C336415F%215109&cid=3705E349C336415F), unzip in the path you want, and replace the path in **train.py**
 
 2. Download Lite-Flownet model, and replace the path in **train.py**
-> wget --timestamping http://content.sniklaus.com/github/pytorch-liteflownet/network-default.pytorch
+> wget --timestamping http://content.sniklaus.com/github/pytorch-liteflownet/network-sintel.pytorch
 
 3. replace all the modle_output_path and log_output_path to where you want in **train.py**
 
