@@ -7,6 +7,7 @@ Pytorch Re-implemention of ano_pre_cvpr2018, replace flownet2 with lite-flownet
 
 [tensorflow_offical_implement](https://github.com/StevenLiuWen/ano_pred_cvpr2018)
 
+
 ** This repo modify the normalization of the Regular Score, And replace flownetSD with lite-flownet **
 AUC 85.6%+-0.1% of Avenue dataset
 
@@ -21,6 +22,8 @@ AUC 85.6%+-0.1% of Avenue dataset
 
 2. Download Lite-Flownet model, and replace the path in **train.py**
 > wget --timestamping http://content.sniklaus.com/github/pytorch-liteflownet/network-sintel.pytorch
+
+** The quality of optical flow matters, it would be better if you finetune the liteflownet with FlyingChairsSDHom dataset**
 
 3. replace all the modle_output_path and log_output_path to where you want in **train.py**
 
