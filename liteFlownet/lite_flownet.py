@@ -329,7 +329,7 @@ class Network(torch.nn.Module):
 			tensorFlow = self.moduleRegularization[intLevel](tensorFirst[intLevel], tensorSecond[intLevel], tensorFeaturesFirst[intLevel], tensorFeaturesSecond[intLevel], tensorFlow)
 		# end
 
-		return tensorFlow * 20.0
+		return tensorFlow #* 20.0
 	# end
 # end
 
