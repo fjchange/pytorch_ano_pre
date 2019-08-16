@@ -11,6 +11,8 @@ Pytorch Re-implemention of ano_pre_cvpr2018, replace flownet2 with lite-flownet
 ** This repo modify the normalization of the Regular Score, And replace flownetSD with lite-flownet **
 AUC 85.6%+-0.1% of Avenue dataset
 
+**You can use FlowNet2SD Now, modify the code in train.py as the comment said.**
+
 ![img](https://github.com/fjchange/pytorch_ano_pre/blob/master/Assests/1554797352491.png)
 
 ## 1. requirement
@@ -24,6 +26,9 @@ AUC 85.6%+-0.1% of Avenue dataset
 > wget --timestamping http://content.sniklaus.com/github/pytorch-liteflownet/network-sintel.pytorch
 
 ** The quality of optical flow matters, it would be better if you finetune the liteflownet with FlyingChairsSDHom dataset**
+
+if you want to use FlowNet2SD, you should download model form Nvidia/flownet2-pytorch, and replace the path in train.py 
+> [Flownet2SD](https://drive.google.com/file/d/1QW03eyYG_vD-dT-Mx4wopYvtPu_msTKn/view?usp=sharin)
 
 3. replace all the modle_output_path and log_output_path to where you want in **train.py**
 
