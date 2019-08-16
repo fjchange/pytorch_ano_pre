@@ -10,6 +10,8 @@ from Dataset import img_dataset
 from models.unet import UNet,_test
 from models.pix2pix_networks import PixelDiscriminator
 from liteFlownet.lite_flownet import Network,batch_estimate
+# if you want to use flownet2-SD
+# from flownet2.models import FlowNet2SD
 from torch.utils.data import DataLoader
 from torch.autograd import Variable
 from tensorboardX import SummaryWriter
@@ -32,7 +34,8 @@ model_generator_save_path='../pth_model/ano_pred_avenue_generator_2.pth'
 model_discriminator_save_path='../pth_model/ano_pred_avenue_discriminator_2.pth'
 
 lite_flow_model_path='../liteFlownet/network-default.pytorch'
-
+# FlowNet2SD path
+# flownet2SD_model_path='Your path'
 
 #----------- all the param as ano pred said ---------
 batch_size=4
@@ -82,6 +85,9 @@ def train(frame_num,layer_nums,input_channels,output_channels,discriminator_num_
     flow_network=Network()
     flow_network.load_state_dict(torch.load(lite_flow_model_path))
     flow_network.cuda().eval()
+    # if you want to use flownet2SD, comment out the part in front
+    # flow_network=FlowNet2SD().cuda().eval()
+    # flow_network.load_state_dict(torch.load(flownet2SD_model_path)['state_dict'])
 
     adversarial_loss=Adversarial_Loss().cuda()
     discriminate_loss=Discriminate_Loss().cuda()
@@ -135,9 +141,15 @@ def train(frame_num,layer_nums,input_channels,output_channels,discriminator_num_
 
             pred_flow_esti_tensor=torch.cat([input_last,G_output],1)
             gt_flow_esti_tensor=torch.cat([input_last,target],1)
-
             flow_gt=batch_estimate(gt_flow_esti_tensor,flow_network)
             flow_pred=batch_estimate(pred_flow_esti_tensor,flow_network)
+            
+            # if you want to use flownet2SD, comment out the part in front
+            # pred_flow_esti_tensor = torch.cat([input_last.view(-1,3,1,test_input.shape[-2],test_input.shape[-1]), G_output.view(-1,3,1,test_input.shape[-2],test_input.shape[-1])], 2)
+            # gt_flow_esti_tensor = torch.cat([input_last.view(-1,3,1,test_input.shape[-2],test_input.shape[-1]), target.view(-1,3,1,test_input.shape[-2],test_input.shape[-1])], 2)
+            #
+            # flow_gt=flow_network(gt_flow_esti_tensor*255.0)
+            # flow_pred=flow_network(pred_flow_esti_tensor*255.0)
 
             g_adv_loss=adversarial_loss(discriminator(G_output))
             g_op_loss=op_loss(flow_pred,flow_gt)
