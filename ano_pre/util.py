@@ -1,7 +1,6 @@
 import numpy as np
 import torch
 import torchvision.transforms
-import tensorflow as tf
 
 def log10(t):
     """
