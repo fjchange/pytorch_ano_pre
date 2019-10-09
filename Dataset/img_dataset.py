@@ -97,4 +97,4 @@ class test_dataset(Dataset):
             pic_clips.append(np_load_frame(self.pics[frame_id],self.img_height,self.img_width))
         pic_clips=np.array(pic_clips)
         pic_clips=torch.from_numpy(pic_clips)
-        return pic_clips,0
+        return pic_clips
