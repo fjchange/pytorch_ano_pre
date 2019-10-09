@@ -122,7 +122,7 @@ def train(frame_num,layer_nums,input_channels,output_channels,discriminator_num_
     test_dataloader=DataLoader(dataset=test_dataset,batch_size=batch_size,shuffle=True,num_workers=1,drop_last=True)
 
     for epoch in range(epochs):
-        for (input,_),(test_input,_) in zip(dataset_loader,test_dataloader):
+        for (input,test_input) in zip(dataset_loader,test_dataloader):
             # generator = generator.train()
             # discriminator = discriminator.train()
 
