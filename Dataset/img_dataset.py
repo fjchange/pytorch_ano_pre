@@ -70,7 +70,7 @@ class ano_pred_Dataset(Dataset):
         #video_clip=to_tensor(video_clip)
         video_clip=np.array(video_clip)
         video_clip=torch.from_numpy(video_clip)
-        return video_clip,0
+        return video_clip
         #return video_clip,0
 
 class test_dataset(Dataset):
